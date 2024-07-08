@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:respoonsize_1/screens/widget/sliver_grid_items.dart';
 
+import 'CustomList.dart';
 import 'SliverListItems.dart';
 
 class HomePageViewBody extends StatelessWidget {
@@ -12,13 +13,15 @@ class HomePageViewBody extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: CustomScrollView(
         slivers: [
-          LayoutBuilder(builder: (context, constraints){
-            if (constraints.maxHeight > 600) {
-              return const Text("Tablet Layout");
-            }else{
-              return const SliverGridItems();
-            }
-          }),
+          SliverToBoxAdapter(
+            child: LayoutBuilder(builder: (context, constraints){
+                if (constraints.maxHeight > 600) {
+                  return const CustomList();
+                }else{
+                  return const SliverGridItems();
+                }
+              }),
+          ),
           const SliverListItems(),
         ],
       ),
