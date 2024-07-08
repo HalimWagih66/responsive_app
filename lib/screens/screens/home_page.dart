@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:respoonsize_1/screens/widget/HomePageViewBody.dart';
 import 'package:respoonsize_1/screens/widget/custom_drawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,11 +30,7 @@ class _HomePageState extends State<HomePage> {
           title: const Text("Responsive",style: TextStyle(color: Colors.white),),
           centerTitle: true,
         ),
-        body: CustomScrollView(
-          slivers: [
-
-          ],
-        )
+        body: const HomePageViewBody()
     );
   }
 }
