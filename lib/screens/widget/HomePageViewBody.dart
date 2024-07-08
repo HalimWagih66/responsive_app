@@ -8,12 +8,18 @@ class HomePageViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: CustomScrollView(
         slivers: [
-          SliverGridItems(),
-          SliverListItems(),
+          LayoutBuilder(builder: (context, constraints){
+            if (constraints.maxHeight > 600) {
+              return const Text("Tablet Layout");
+            }else{
+              return const SliverGridItems();
+            }
+          }),
+          const SliverListItems(),
         ],
       ),
     );
