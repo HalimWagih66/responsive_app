@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:respoonsize_1/screens/widget/sliver_grid_items.dart';
 
+import 'SliverListItems.dart';
+
 class HomePageViewBody extends StatelessWidget {
   const HomePageViewBody({super.key});
 
@@ -11,6 +13,7 @@ class HomePageViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverGridItems(),
+          SliverListItems(),
         ],
       ),
     );
