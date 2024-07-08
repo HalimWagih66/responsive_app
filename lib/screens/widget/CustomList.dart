@@ -6,16 +6,18 @@ class CustomList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        itemBuilder: (context, index) =>
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 6.0),
-              child: AspectRatio(aspectRatio: 1, child: SliverGirdItem()),
-            ),
-        scrollDirection: Axis.horizontal,
-        itemCount: 20,
+    return SliverToBoxAdapter(
+      child: SizedBox(
+        height: 100,
+        child: ListView.builder(
+          itemBuilder: (context, index) =>
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6.0),
+                child: AspectRatio(aspectRatio: 1, child: SliverGirdItem()),
+              ),
+          scrollDirection: Axis.horizontal,
+          itemCount: 20,
+        ),
       ),
     );
   }
