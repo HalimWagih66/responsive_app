@@ -8,7 +8,7 @@ class CustomList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 100,
+        height: 140,
         child: ListView.builder(
           itemBuilder: (context, index) =>
               const Padding(

@@ -10,7 +10,7 @@ class ItemDrawer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12.0,horizontal: 8),
       child: ListTile(
         leading: Icon(itemDrawerModel.iconData,size: 40,),
-          title:Text(itemDrawerModel.title) ,
+          title:FittedBox(alignment: Alignment.center,fit: BoxFit.scaleDown,child: Text(itemDrawerModel.title)) ,
 
       ),
     );

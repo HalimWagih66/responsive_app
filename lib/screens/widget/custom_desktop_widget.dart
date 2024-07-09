@@ -7,9 +7,12 @@ class CustomDesktopWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Expanded(flex: 2,child: SliverGirdItem()),
+        SizedBox(
+          height: 16,
+        ),
         Expanded(child: SliverListItem())
       ],
     );

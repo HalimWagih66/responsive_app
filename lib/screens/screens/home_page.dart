@@ -19,18 +19,22 @@ class _HomePageState extends State<HomePage> {
       key: key,
         backgroundColor: const Color(0xffDBDBDB),
         drawer: const CustomDrawer(),
-        appBar: AppBar(
-          leading: GestureDetector(
-            onTap: () {
-              key.currentState?.openDrawer();
-            },
-              child: const Icon(Icons.menu,color: Colors.white,)
-          ),
-          backgroundColor: Colors.black,
-          title: const Text("Responsive",style: TextStyle(color: Colors.white),),
-          centerTitle: true,
-        ),
+        appBar:buildAppBar(),
         body: const HomePageViewBody()
     );
+  }
+
+  AppBar? buildAppBar(){
+    return MediaQuery.sizeOf(context).width <= 900 ?AppBar(
+      leading: GestureDetector(
+          onTap: () {
+            key.currentState?.openDrawer();
+          },
+          child: const Icon(Icons.menu,color: Colors.white,)
+      ),
+      backgroundColor: Colors.black,
+      title: const Text("Responsive",style: TextStyle(color: Colors.white),),
+      centerTitle: true,
+    ):null;
   }
 }
